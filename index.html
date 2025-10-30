@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>IMA HTML5 Simple Demo</title>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -7,6 +8,7 @@
   <body>
     <section>
       <h2> add clickTrackingElement </h2>
+      <p>Normally, clicking the &lt;Icon&gt; should navigate to the URL specified in &lt;IconClickThrough&gt;. However, after setting clickTrackingElement, clicking the icon instead triggers a pause ad action.</p>
       <div id="c1_mainContainer" class="mainContainer">
         <div id="c1_content" class="content">
           <video id="c1_contentElement" class="contentElement">
@@ -21,6 +23,7 @@
 
     <section>
       <h2> none clickTrackingElement </h2>
+      <p>The icon click works fine when the clickTrackingElement is not added.</p>
       <div id="c2_mainContainer" class="mainContainer">
         <div id="c2_content" class="content">
           <video id="c2_contentElement" class="contentElement">

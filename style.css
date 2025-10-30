@@ -1,30 +1,39 @@
-.mainContainer {
-  position: relative;
-  width: 640px;
-  height: 360px;
+html { font-size: 16px; }
+body { font-size: 1rem; line-height: 1.6; margin: 16px; }
+
+section {
+  padding-bottom: 50px;
 }
 
-.content {
+.mainContainer {
+  position: relative;
+  width: 100%;
+  max-width: 640px;   /* 桌面上不會超過原本寬度 */
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+}
+
+.content, .adContainer {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 640px;
-  height: 360px;
+  inset: 0;           /* 等同 top/right/bottom/left 全為 0 */
 }
 
 .contentElement {
-  width: 640px;
-  height: 360px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* 或用 contain 視需求 */
   overflow: hidden;
 }
 
 .button {
-  margin-top:10px;
+  display: inline-block;
+  margin-top: 10px;
   vertical-align: top;
-  width: 350px;
-  height: 60px;
-  padding: 0;
-  font-size: 22px;
+  width: 100%;
+  max-width: 350px;
+  height: 3rem;           /* 約 48px */
+  padding: 0 0.75rem;
+  font-size: 1rem;        /* 依使用者設定縮放 */
   color: white;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
@@ -44,6 +53,3 @@
   height: 360px;
 }
 
-section {
-  padding-bottom: 50px;
-}
