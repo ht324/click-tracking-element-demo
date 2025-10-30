@@ -59,7 +59,7 @@ function Player({
         adDisplayContainer.initialize();
 
         try {
-            adsManager.init(640, 360);
+            adsManager.init(adContainer.offsetWidth, adContainer.offsetHeight);
             adsManager.start();
         } catch (adError) {
             videoContent.play();
