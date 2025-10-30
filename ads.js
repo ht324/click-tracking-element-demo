@@ -1,92 +1,3 @@
-const iconVast = `<?xml version="1.0" encoding="UTF-8"?>
-<VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vast.xsd" version="4.2">
- <Ad id="123456">
-  <InLine>
-   <AdSystem>GDFP</AdSystem>
-   <AdTitle>Google Why This Ad VAST 4.2 Sample</AdTitle>
-   <Description><![CDATA[A sample VAST 4.2 tag with Google Why This Ad]]></Description>
-   <Error><![CDATA[https://example.com/conversion?label=videoplayfailed[ERRORCODE]]]></Error>
-   <Impression><![CDATA[https://example.com/view]]></Impression>
-   <Creatives>
-    <Creative id="7891011" AdID="ABCD123456EF" sequence="1">
-     <Linear skipoffset="00:00:03">
-      <Duration>00:00:10</Duration>
-      <TrackingEvents>
-       <Tracking event="start"><![CDATA[https://example.com/conversion?label=part2viewed]]></Tracking>
-       <Tracking event="firstQuartile"><![CDATA[https://example.com/conversion?label=videoplaytime25]]></Tracking>
-       <Tracking event="midpoint"><![CDATA[https://example.com/conversion?label=videoplaytime50]]></Tracking>
-       <Tracking event="thirdQuartile"><![CDATA[https://example.com/conversion?label=videoplaytime75]]></Tracking>
-       <Tracking event="complete"><![CDATA[https://example.com/conversion?label=videoplaytime100]]></Tracking>
-       <Tracking event="mute"><![CDATA[https://example.com/conversion?label=admute]]></Tracking>
-       <Tracking event="unmute"><![CDATA[https://example.com/conversion?label=adunmute]]></Tracking>
-       <Tracking event="rewind"><![CDATA[https://example.com/conversion?label=adrewind]]></Tracking>
-       <Tracking event="pause"><![CDATA[https://example.com/conversion?label=adpause]]></Tracking>
-       <Tracking event="resume"><![CDATA[https://example.com/conversion?label=adresume]]></Tracking>
-       <Tracking event="fullscreen"><![CDATA[https://example.com/conversion?label=adfullscreen]]></Tracking>
-       <Tracking event="creativeView"><![CDATA[https://example.com/conversion?label=vast_creativeview]]></Tracking>
-       <Tracking event="exitFullscreen"><![CDATA[https://example.com/conversion?label=vast_exit_fullscreen]]></Tracking>
-       <Tracking event="acceptInvitationLinear"><![CDATA[https://example.com/conversion?label=acceptinvitation]]></Tracking>
-       <Tracking event="closeLinear"><![CDATA[https://example.com/conversion?label=adclose]]></Tracking>
-       <Tracking event="skip" ><![CDATA[https://example.com/conversion?label=videoskipped]]></Tracking>
-       <Tracking event="progress" offset="00:00:02"><![CDATA[https://example.com/conversion?label=video_skip_shown]]></Tracking>
-       <Tracking event="progress" offset="00:00:04"><![CDATA[https://example.com/conversion?label=video_engaged_view]]></Tracking>
-      </TrackingEvents>
-      <VideoClicks>
-       <ClickThrough id="GDFP"><![CDATA[https://example.com?clickthrough=1]]></ClickThrough>
-       <ClickTracking id=""><![CDATA[https://example.com/conversion?label=clicktrack]]></ClickTracking>
-       <CustomClick id="GDFP"><![CDATA[https://example.com/conversion?label=customclick]]></CustomClick>
-      </VideoClicks>
-      <MediaFiles>
-       <MediaFile id="GDFP" delivery="progressive" bitrate="1813" width="640" height="360" type="video/mp4" scalable="false" maintainAspectRatio="false">
-        <![CDATA[https://storage.googleapis.com/interactive-media-ads/media/preroll.mp4]]>
-       </MediaFile>
-      </MediaFiles>
-      <Icons>
-       <Icon program="AdChoices" width="30" height="30" xPosition="right" yPosition="20" duration="00:00:06" offset="00:00:02" apiFramework="VAST" altText="AdChoices">
-        <StaticResource creativeType="image/png">
-         <![CDATA[ https://storage.googleapis.com/interactive-media-ads/images/icon_abg8.png ]]>
-        </StaticResource>
-        <IconViewTracking><![CDATA[https://example.com/conversion?label=icon_view&program=adchoices]]></IconViewTracking>
-        <IconClicks>
-         <IconClickThrough><![CDATA[https://example.com?clickthrough=icon&program=adchoices]]></IconClickThrough>
-         <IconClickTracking><![CDATA[https://example.com/conversion?label=icon_click&program=adchoices]]></IconClickTracking>
-         <IconClickFallbackImages>
-          <IconClickFallbackImage width="400" height="150">
-           <AltText>Alt icon fallback</AltText>
-           <StaticResource creativeType="image/png"><![CDATA[https://storage.googleapis.com/interactive-media-ads/images/wta_dialog.png?size=1x]]></StaticResource>
-          </IconClickFallbackImage>
-          <IconClickFallbackImage width="800" height="300">
-           <AltText>Alt icon fallback</AltText>
-           <StaticResource creativeType="image/png"><![CDATA[https://storage.googleapis.com/interactive-media-ads/images/wta_dialog.png?size=2x]]></StaticResource>
-          </IconClickFallbackImage>
-         </IconClickFallbackImages>
-        </IconClicks>
-       </Icon>
-       <Icon program="GoogleWhyThisAd" width="50" height="50" xPosition="20" yPosition="bottom" duration="00:00:10" offset="00:00:00" apiFramework="VAST" altText="Why This Ad?">
-        <StaticResource creativeType="image/png">
-         <![CDATA[https://storage.googleapis.com/interactive-media-ads/hosted-samples/wta/icon_adchoices.png]]>
-        </StaticResource>
-        <IconViewTracking><![CDATA[https://example.com/conversion?label=icon_view&program=googlewhythisad]]></IconViewTracking>
-        <IconClicks>
-         <IconClickThrough><![CDATA[https://example.com?clickthrough=icon&program=googlewhythisad]]></IconClickThrough>
-         <IconClickTracking><![CDATA[https://example.com/conversion?label=icon_click&program=googlewhythisad]]></IconClickTracking>
-         <IconClickFallbackImages>
-          <IconClickFallbackImage width="400" height="150">
-          <AltText>Alt icon fallback</AltText>
-          <StaticResource creativeType="image/png"><![CDATA[https://storage.googleapis.com/interactive-media-ads/images/wta_dialog.png]]></StaticResource>
-          </IconClickFallbackImage>
-         </IconClickFallbackImages>
-        </IconClicks>
-       </Icon>
-      </Icons>
-     </Linear>
-    </Creative>
-   </Creatives>
-  </InLine>
- </Ad>
-</VAST>
-`
-
 // Copyright 2013 Google Inc. All Rights Reserved.
 // You may study, modify, and use this example for any purpose.
 // Note that this example is provided "as is", WITHOUT WARRANTY
@@ -143,7 +54,8 @@ function setUpIMA() {
 
   // Request video ads.
   const adsRequest = new google.ima.AdsRequest();
-  adsRequest.adsResponse = iconVast;
+  //adsRequest.adsResponse = iconVast;
+  adsRequest.adTagUrl = "https://storage.googleapis.com/interactive-media-ads/ad-tags/ima_wta_sample_vast_4_2.xml";
 
   // Specify the linear and nonlinear slot sizes. This helps the SDK to
   // select the correct creative if multiple are returned.
