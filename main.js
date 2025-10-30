@@ -37,8 +37,12 @@ function Player({
         const adsRequest = new google.ima.AdsRequest();
         adsRequest.adTagUrl = "https://storage.googleapis.com/interactive-media-ads/ad-tags/ima_wta_sample_vast_4_2.xml";
 
-        adsRequest.linearAdSlotWidth = 640;
-        adsRequest.linearAdSlotHeight = 400;
+        let w = adContainer.offsetWidth, h = adContainer.offsetHeight;
+        adsRequest.linearAdSlotWidth = w;
+        adsRequest.linearAdSlotHeight = h;
+        adsRequest.nonLinearAdSlotWidth = w;
+        adsRequest.nonLinearAdSlotHeight = h;
+        
         adsLoader.requestAds(adsRequest);
     }
 
